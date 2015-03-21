@@ -1,0 +1,38 @@
+<div ng-controller="ModalDemoCtrl">
+    <script type="text/ng-template" id="template/register.html">
+        <div class="modal-header">
+            <h1 class="modal-title">I'm a modal!</h1>
+        </div>
+        <div class="modal-body">
+            <h3>Register</h3>
+            
+        </div>
+        <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Your Name</h3>
+        </div>
+        <div class="panel-body">
+          Enter Your Name here:
+          <input type="text" ng-model="selected" class="form-control" width="100px">
+        </div>
+      </div>
+      <div class="panel" width="30px">
+        <div class="panel-heading">
+          <h3 class="panel-title">Your Password</h3>
+        </div>
+        <div class="panel-body">
+          Enter Your Password here:
+          <input type="text" ng-model="selected" class="form-control" width="100px">
+        </div>
+      </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-primary" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+    <button class="btn btn-default" ng-click="open()">Open me!</button>
+    <button class="btn btn-default" ng-click="open('lg')">Large modal</button>
+    <button class="btn btn-default" ng-click="open('sm')">Small modal</button>
+    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+</div>

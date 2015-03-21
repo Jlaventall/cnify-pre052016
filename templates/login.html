@@ -1,0 +1,62 @@
+<div class="modal-header">
+	<h3 class="modal-title">Register/Sign-in to CNify</h3>
+</div>
+<div class="modal-body">
+	<div ng-controller="TabsDemoCtrl">
+	  <tabset>
+		<tab heading="Register">
+            <alert type="danger" class="auth-errors" close="closeAlert(regError)" ng-if="regError.message"><small>{{regError.message}}</small></alert>
+            <alert type="success" class="auth-errors" close="closeAlert(regSuccess)" ng-if="regSuccess.message"><small>{{regSuccess.message}}</small></alert>
+			<p>Create a Username:</p>
+            <span ng-class="{'has-error': regError.userError}">
+                <input type="text" ng-model="username" class="form-control">
+            </span>
+			<p>Enter a Password here:</p>
+            <span ng-class="{'has-error': regError.passwordError}">
+                <input type="password" ng-model="password1" class="form-control">
+            </span>
+			<p>Re-enter your password:</p>
+            <span ng-class="{'has-error': regError.passwordError}">
+                <input type="password" ng-model="password2" class="form-control">
+            </span>
+			<p>Enter Your E-Mail:</p>
+            <span ng-class="{'has-error': regError.emailError}">
+                <input type="text" ng-model="email" class="form-control">
+            </span>
+            <div class="modal-footer">
+			    <button class="btn btn-CNify1" ng-click="register(username, password1, password2, email)">OK</button>
+			    <button class="btn btn-CNify2" ng-click="cancel()">Cancel</button>
+            </div>
+		</tab>
+		<tab heading="Login">
+            <alert type="danger" class="auth-errors" close="closeAlert(logError)" ng-if="logError.message"><small>{{logError.message}}</small></alert>
+		    <p>Create a Username:</p>
+            <span ng-class="{'has-error': logError.credError}">
+                <input type="text" class="form-control" required autofocus ng-model="username">
+            </span>
+		    <p>Enter a Password here:</p>
+            <span ng-class="{'has-error': logError.credError}">
+                <input type="password" class="form-control" required ng-model="password">
+            </span>
+            <div class="modal-footer">
+                <button class="btn btn-CNify1" ng-click="login(username, password)">OK</button>
+                <button class="btn btn-CNify2" ng-click="cancel()">Cancel</button>
+            </div>
+		</tab>
+		<tab heading="Forgotten Password">
+			<p>Enter Your E-Mail:</p>
+			<input type="text" ng-model="email" class="form-control">
+            <p style="display: none" id="forgot_success">Success! Please check your e-mail</p>
+            <div class="modal-footer">
+                <button class="btn btn-CNify1" ng-click="forgotten(email)">OK</button>
+                <button class="btn btn-CNify2" ng-click="cancel()">Cancel</button>
+            </div>
+		</tab>
+	  </tabset>
+	</div>
+
+</div>
+<!-- <div class="modal-footer">
+	<button class="btn btn-CNify1" ng-click="ok()">OK</button>
+	<button class="btn btn-CNify2" ng-click="cancel()">Cancel</button>
+</div> -->

@@ -1,0 +1,292 @@
+
+/**
+ * Main AngularJS Web Application
+ */
+var app = angular.module('mysite', [
+  'ngRoute','ui.bootstrap'
+]);
+
+/**
+ * Configure the Routes
+ */
+app.config(['$routeProvider', function ($routeProvider) {
+  $routeProvider
+    // Home
+    .when("/", {templateUrl: "partials/home.html", controller: "PageCtrl"})
+	.when("/travel", {templateUrl: "partials/travel.html", controller: "PageCtrl"})
+    // Pages
+	.when("/china", {templateUrl: "partials/china.html", controller: "PageCtrl"})
+    .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
+    .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
+
+    // else 404
+    .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
+}]);
+
+/**
+ * Controls the Anchor links
+ */
+
+app.controller('ScrollController', ['$scope', '$location', '$anchorScroll',
+  function ($scope, $location, $anchorScroll) {
+    $scope.gotoContent = function() {
+      // set the location.hash to the id of
+      // the element you wish to scroll to.
+      $location.hash('Content');
+
+      // call $anchorScroll()
+      $anchorScroll();
+    };
+  }]);
+
+/**
+ * Controls the carousel CHINA
+ */
+app.controller('CarouselCtrl_china', function ($scope) {
+  $scope.myInterval = 5000;
+  var slides = $scope.slides = [];
+  $scope.addSlide = function() {
+    var newWidth = 800 + slides.length + 1;
+    $scope.myInterval = 7000;
+	  $scope.slides = [{
+		image: 'img/zh_fact1_400.png'
+	  }, {
+		image: 'img/zh_fact2_400.png'
+	  }, {
+		image: 'img/zh_fact3_400.png'
+	  }, {
+		image: 'img/zh_fact4_400.png'
+	  }, {
+		image: 'img/zh_fact5_400.png'
+	  }, {
+		image: 'img/zh_fact6_400.png'
+	  }, {
+		image: 'img/zh_fact7_400.png'
+	  }, {
+		image: 'img/zh_fact8_400.png'
+	  }, {
+		image: 'img/zh_fact9_400.png'
+	  }, {
+    image: 'img/zh_fact10_400.png'
+    }
+    ];
+  };
+  for (var i=0; i<4; i++) {
+    $scope.addSlide();
+  }
+});
+
+/**
+ * Controls Modal - login
+ */
+app.controller('LoginCtrl', function ($scope, $modalInstance) {
+  console.log('$scope.username');
+  $scope.username = 'asdasd';
+  $scope.login = function () {
+    console.log($scope.username);
+    console.log($scope.password);
+  };
+
+  $scope.cancel = function () {
+    console.log('message');
+    $modalInstance.dismiss('cancel');
+  };
+});
+
+app.controller('ModalRegisterCtrl', function ($scope, $modal, $log) {
+console.log('ModalRegisterCtrl');
+  $scope.items = ['item1', 'item2', 'item3'];
+  $scope.open = function (size) {
+
+    var modalInstance = $modal.open({
+      templateUrl: 'templates/login.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+});
+
+
+/**
+ * Controls Modal - signup
+ */
+
+app.controller('ModalSignupCtrl', function ($scope, $modal, $log) {
+console.log('ModalSignupCtrl');
+  $scope.items = ['item1', 'item2', 'item3'];
+
+  $scope.open = function (size) {
+
+    var modalInstance = $modal.open({
+      templateUrl: 'templates/signup.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+});
+
+// Please note that $modalInstance represents a modal window (instance) dependency.
+// It is not the same as the $modal service used above.
+
+app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, items) {
+
+  $scope.ok = function () {
+    $modalInstance.close($scope.selected.item);
+  };
+
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+  };
+});
+
+/**
+ * Controls Tabs
+ */
+
+app.service('AuthorizationService', ['$http', '$route', '$location', '$window',
+    function ($http, $route, $location, $window) {
+      this.login = function (username, password) {
+
+        return $http.post('https://my.cnify.com/login_to_cnify/',
+        $.param({username: username, password: password}),
+        { headers: {'Content-Type': 'application/x-www-form-urlencoded'}, withCredentials: true})
+
+      };
+
+      this.register = function (username, password1, password2, email) {
+
+      return $http.post('https://my.cnify.com/register_to_cnify/',
+        $.param({grant_type: 'password', username: username, password1: password1, password2: password2, email: email}),
+        { headers: {'Content-Type': 'application/x-www-form-urlencoded'}, withCredentials: true});
+      };
+
+      this.forgotten = function (email) {
+
+      return $http.post('https://my.cnify.com/password_reset_to_cnify/',
+        $.param({email: email}),
+        { headers: {'Content-Type': 'application/x-www-form-urlencoded'}, withCredentials: true});
+      };
+
+    }]);
+
+app.controller('TabsDemoCtrl', function ($scope, $window, AuthorizationService) {
+  console.log('TabsDemoCtrl');
+    
+  $scope.regError = {};
+  $scope.regSuccess = {};
+  $scope.logError = {};
+    
+  $scope.closeAlert = function (err) {
+    err.message = null;
+  };
+    
+  $scope.tabs = [
+    { title:'Register', content:'RegisterForm' },
+    { title:'Login', content:'LoginForm', disabled: true },
+    { title:'Password', content:'PasswordForm', disabled: true }
+  ];
+
+  $scope.register = function (username, password1, password2, email) {
+    AuthorizationService.register(username, password1, password2, email).success(function(response) {
+      $scope.regError = {};  
+      $scope.regSuccess.message = 'You have successfully registered. Please activate your account by received email.';
+      //$scope.login(username, password1)
+    }).error(function (data, status){
+      if (status == 403) {
+        $scope.regError = {};
+        $scope.regSuccess = {};
+          
+        switch (data) {
+          case 'A user with that email already exists.' :
+            $scope.regError.emailError = true;
+            break;
+          case 'The two password fields didn\'t match.' :
+            $scope.regError.passwordError = true;
+            break;
+          case 'A user with that username already exists.' :
+            $scope.regError.userError = true;
+            break;
+        }
+        $scope.regError.message = data.replace(/<[^>]+>/gm, '');
+          
+      } else {
+        $scope.regError.message = data.replace(/<[^>]+>/gm, '') || 'Server error occurred';
+      }
+      
+      console.log(data);
+    });
+  };
+
+  $scope.login = function (username, password) {
+    AuthorizationService.login(username, password).success(function() {
+      $scope.logError = {};  
+      $window.location.href = 'https://my.cnify.com/';
+    }).error(function (data, status) {  
+      $scope.regError = {};
+        
+      if (status == 403) {
+        $scope.logError.message = 'Invalid username or password.';
+        $scope.logError.credError = true;
+      } else {
+        $scope.logError.message = data.replace(/<[^>]+>/gm, '') || 'Server error occurred';
+      }
+        
+      console.log(data);
+    });
+  };
+
+  $scope.forgotten = function (email) {
+    AuthorizationService.forgotten(email).success(function(response) {
+        $('#forgot_success').css('display', 'inline');
+    }).error(function (data){
+        console.log(data);
+      });
+  };
+  $scope.alertMe = function() {
+    setTimeout(function() {
+      $window.alert('You\'ve selected the alert tab!');
+    });
+  };
+});
+
+
+/**
+ * Controls all other Pages
+ */
+app.controller('PageCtrl', function (/* $scope, $location, $http */) {
+  console.log("Page Controller reporting for duty.");
+
+  // Activates the Carousel
+  $('.carousel').carousel({
+    interval: 5000
+  });
+
+  // Activates Tooltips for Social Links
+  $('.tooltip-social').tooltip({
+    selector: "a[data-toggle=tooltip]"
+  })
+});
+
+
