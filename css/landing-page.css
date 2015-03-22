@@ -146,6 +146,10 @@ h3 {
 	position: absolute;
 	right: 75px;
 }
+
+.rgt-border {
+	border-bottom: 1px solid grey;
+}
 }
 
 
@@ -612,4 +616,10 @@ footer {
 
 p.copyright {
     margin: 15px 0 0;
+}
+
+footer .login {
+	display: block;
+	position: absolute;
+	top: 30px;
 }
