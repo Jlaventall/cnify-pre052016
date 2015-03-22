@@ -80,8 +80,9 @@ h3 {
 
 /* navbar */
 
-.navbar {
-	height: 100px;
+.navbar-nav {
+	position: absolute;
+	right: 150px;
 }
 
 .navbar-nav.navbar-right:last-child {
@@ -110,8 +111,11 @@ h3 {
 	font-size: 18px;
 	line-height: 20px;
     position: relative;
-    top: 30px;
     left: 0px;
+}
+
+.navbar-default {
+	background: #fff;
 }
 
 .collapse.navbar-collapse.navbar-ex2-collapse {
@@ -119,102 +123,123 @@ h3 {
   margin-right: -50px;
 }
 
-/* INTRO */
-.intro {
-    display: table;
-    width: 100%;
-    height: 900px;
-    padding: 100px 0;
-    text-align: center;
-    color: #fff;
-    background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
-    background-color: #000;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    background-size: contain;
-    -o-background-size: contain;
+.collapse {
+	background: #fff;
 }
 
-.intro .intro-body {
-    display: table-cell;
-    vertical-align: middle;
+.login {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 10px;
 }
 
-.intro .intro-body .brand-heading {
-    margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-    font-size: 4em;
-	font-variant: small-caps;
+@media(max-width:768px) {
+.login {
+  display: block;
+  position: absolute;
+  left: 150px;
+  top: 10px;
+}
 }
 
-.intro .intro-body .intro-text {
-    font-size: 18px;
-}
 
-.intro-travel {
-    display: table;
-    width: 100%;
-    height: 900px;
-    padding: 100px 0;
-    text-align: center;
-    color: #fff;
-    background: url(../img/intro-travel-bg.jpg) no-repeat bottom center scroll;
-    background-color: #000;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    background-size: contain;
-    -o-background-size: contain;
-}
 
-.intro-travel .intro-body {
-    display: table-cell;
-    vertical-align: middle;
-}
+/* Header */
 
-.intro-travel .intro-body .brand-heading {
-    margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-    font-size: 4em;
-	font-variant: small-caps;
-}
+	#header-wrapper
+	{
+		background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
+		background-size: cover;
+		position: relative;
+		top: 50px;
+	}
+	
+	#header-wrapper:before
+	{
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(60,50,70,0.65);
+	}
+	
+	#header {
+		position: relative;
+		z-index: 1;
+	}
+	
+	header
+	{
+		margin-bottom: 3em;
+		position: relative;
+	}
+	
+	header h1
+	{
+		color: #fff;
+		margin: 0;
+		text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+		font-size: 6em;
+		font-variant: small-caps;
+	}
 
-.intro-travel .intro-body .intro-text {
-    font-size: 18px;
-}
+	header h2
+	{
+		color: #fff;
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+	
+		header h3
+	{
+		color: #fff;
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
 
-.intro-box {
-	display: inline-block;
-	position: relative;
-	left: 0;
-	padding: 35px;
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
-	/* border-radius: 5px; */
-	/* border: 1px solid #807E7D; */
-	background: rgba(0,0,0,0.5);
-	z-index: 2;
-}
+	header .byline
+	{
+		display: block;
+		margin: 1.50em 0em;
+		line-height: 2em;
+		font-weight: 200;
+		color: rgba(255,255,255,.8);
+	}
 
-.intro-divider {
-    width: 400px;
-    border-top: 1px solid #f8f8f8;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
-}
+/* Banner */
 
-@media(min-width:768px) {
-    .intro {
-        height: 900px;
-        padding: 0;
-    }
+	#banner
+	{
+		overflow: hidden;
+		padding: 10em 0em;
+		text-align: center;
+		z-index: 1;
+		position: relative;
+	}
 
-    .intro .intro-body .brand-heading {
-        font-size: 100px;
-    }
+	#banner header h2
+	{
+		text-transform: uppercase;
+		font-size: 3em;
+		color: #FFF;
+	}
 
-    .intro .intro-body .intro-text {
-        font-size: 26px;
-    }
-}
+	#banner header .byline
+	{
+		padding: 0em 5em;
+		font-size: 1.50em;
+	}
+	
+	#banner .button
+	{
+		margin-top: 1em;
+	}
+
 
 .btn-circle {
     width: 70px;
@@ -538,6 +563,10 @@ h3 {
 }
 
 /*other pages*/
+
+.page-header {
+	margin-top: 100px;
+}
 
 #china .carousel-indicators {
 	display: none;
