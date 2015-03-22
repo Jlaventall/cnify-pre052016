@@ -173,6 +173,7 @@ h3 {
 	display: inline-block;
 	position: relative;
 	left: 0;
+	padding: 35px;
 	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
 	/* border-radius: 5px; */
