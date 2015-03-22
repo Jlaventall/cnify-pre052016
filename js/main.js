@@ -13,8 +13,7 @@ app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
     // Home
     .when("/", {templateUrl: "partials/home.html", controller: "PageCtrl"})
-    .when("/travel", {templateUrl: "partials/travel.html", controller: "PageCtrl"})
-    
+ 
     // Pages
     .when("/china", {templateUrl: "partials/china.html", controller: "PageCtrl"})
     .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
