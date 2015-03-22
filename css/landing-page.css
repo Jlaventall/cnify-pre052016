@@ -4,6 +4,14 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+@font-face {
+  font-family: 'Open Sans Condensed';
+  src: url('../fonts/OpenSans-CondLight-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/OpenSans-CondLight-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/OpenSans-CondLight-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/OpenSans-CondLight-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
 body,
 html {
     width: 100%;
