@@ -14,13 +14,15 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav navbar-right">
+				<li><a href="#/">Home</a></li>
                 <li><a href="#/china">Why China?</a></li>
 				<li><a href="#/about">About</a></li>			
 				<li><a href="#/contact">Contact</a></li>
-				<li><div ng-controller="ModalRegisterCtrl"><button class="btn btn-lg" ng-click="open()">Login/Register</button></div></li>
 			</ul>
 		</div>
-
+		<div class="collapse navbar-collapse navbar-ex2-collapse">
+			<div ng-controller="ModalRegisterCtrl"><button class="btn btn-CNify1" ng-click="open()">Login/Register</button></div>
+		</div>
        <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
