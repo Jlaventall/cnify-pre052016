@@ -15,6 +15,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/", {templateUrl: "partials/home.html", controller: "PageCtrl"})
  
     // Pages
+	.when("/CNify-process", {templateUrl: "partials/CNify-process.html", controller: "PageCtrl"})
     .when("/china", {templateUrl: "partials/china.html", controller: "PageCtrl"})
     .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
     .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})

@@ -124,7 +124,7 @@ h3 {
 }
 
 .collapse {
-	background: #fff;
+	background-color: rgba(255, 255, 255, 0.75);
 }
 
 .login {
@@ -138,8 +138,13 @@ h3 {
 .login {
   display: block;
   position: absolute;
-  left: 150px;
+  right: 75px;
   top: 10px;
+}
+
+.navbar-nav {
+	position: absolute;
+	right: 75px;
 }
 }
 
@@ -216,7 +221,7 @@ h3 {
 	#banner
 	{
 		overflow: hidden;
-		padding: 10em 0em;
+		padding: 14em 0em;
 		text-align: center;
 		z-index: 1;
 		position: relative;
@@ -320,6 +325,10 @@ h3 {
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 2px;
+}
+
+.rgt-border {
+	border-right: 1px solid grey;
 }
 
 .content-section-a {
@@ -589,53 +598,6 @@ h3 {
 }
 
 /*FOOTER*/
-
-.banner {
-    padding: 100px 0;
-    color: #f8f8f8;
-    background: url(../img/banner-bg.jpg) no-repeat center center;
-    background-size: cover;
-}
-
-.banner h2 {
-    margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-    font-size: 3em;
-}
-
-.banner ul {
-    margin-bottom: 0;
-}
-
-.banner-social-buttons {
-    float: right;
-    margin-top: 0;
-}
-
-@media(max-width:1199px) {
-    ul.banner-social-buttons {
-        float: left;
-        margin-top: 15px;
-    }
-}
-
-@media(max-width:767px) {
-    .banner h2 {
-        margin: 0;
-        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-        font-size: 3em;
-    }
-
-    ul.banner-social-buttons > li {
-        display: block;
-        margin-bottom: 20px;
-        padding: 0;
-    }
-
-    ul.banner-social-buttons > li:last-child {
-        margin-bottom: 0;
-    }
-}
 
 .last-row {
 	padding-bottom: 150px;
