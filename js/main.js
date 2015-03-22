@@ -13,14 +13,15 @@ app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
     // Home
     .when("/", {templateUrl: "partials/home.html", controller: "PageCtrl"})
-	.when("/travel", {templateUrl: "partials/travel.html", controller: "PageCtrl"})
+    .when("/travel", {templateUrl: "partials/travel.html", controller: "PageCtrl"})
+    
     // Pages
-	.when("/china", {templateUrl: "partials/china.html", controller: "PageCtrl"})
+    .when("/china", {templateUrl: "partials/china.html", controller: "PageCtrl"})
     .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
     .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
 
     // else 404
-    .otherwise("/404", {templateUrl: "partials/404.html", controller: "PageCtrl"});
+    .otherwise({templateUrl: "partials/404.html", controller: "PageCtrl"});
 }]);
 
 app.service('anchorSmoothScroll', function() {
