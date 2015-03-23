@@ -1,3 +1,26 @@
+ <div class="container">
+	<div class="row last-row">
+		<div class="col-lg-5 col-sm-6">
+			<hr class="section-heading-spacer">
+			<div class="clearfix"></div>
+			<h2 class="section-heading">Ready to start?</h2>
+				<p>Click the 'Register/Login' button below to get started. Follow the instructions for setting up an account and starting a project.</p>
+			<div ng-controller="ModalRegisterCtrl">
+				<button type="button" class="btn btn-default btn-lg" ng-click="open()">Register/Login</button>
+			</div>
+			<br>
+		</div>
+		<div class="col-lg-5 col-lg-offset-2 col-sm-6">
+			<hr class="section-heading-spacer">
+			<div class="clearfix"></div>
+			<h2 class="section-heading">Not sure where to start?</h2>
+			<p class="text-muted">Sign-up to receive relevant direct-to-China marketing ideas delivered straight to your inbox</p>
+			<div ng-controller="ModalSignupCtrl">
+				<button type="button" class="btn btn-default btn-lg" ng-click="open()">Sign-Up</button>
+			</div>
+		</div>
+	</div>
+</div>
 <footer>
         <div class="container">
             <div class="row">
