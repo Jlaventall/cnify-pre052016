@@ -31,11 +31,11 @@
 		<tab heading="Login">
             <alert type="danger" class="auth-errors" close="closeAlert(logError)" ng-if="logError.message"><small>{{logError.message}}</small></alert>
 		    <p>Create a Username:</p>
-            <span ng-class="{'has-error': logError.credError}">
+            <span ng-class="{'has-error': logError.credError || logError.userError}">
                 <input type="text" class="form-control" required autofocus ng-model="username">
             </span>
 		    <p>Enter a Password here:</p>
-            <span ng-class="{'has-error': logError.credError}">
+            <span ng-class="{'has-error': logError.credError || logError.passwordError}">
                 <input type="password" class="form-control" required ng-model="password">
             </span>
             <div class="modal-footer">
@@ -44,9 +44,13 @@
             </div>
 		</tab>
 		<tab heading="Forgotten Password">
+            <alert type="danger" class="auth-errors" close="closeAlert(forgotError)" ng-if="forgotError.message"><small>{{forgotError.message}}</small></alert>
+            <alert type="success" class="auth-errors" close="closeAlert(forgotSuccess)" ng-if="forgotSuccess.message"><small>{{forgotSuccess.message}}</small></alert>
 			<p>Enter Your E-Mail:</p>
-			<input type="text" ng-model="email" class="form-control">
-            <p style="display: none" id="forgot_success">Success! Please check your e-mail</p>
+            <span ng-class="{'has-error': forgotError.emailError}">
+                <input type="text" ng-model="email" class="form-control">
+            </span>
+            <!--<p style="display: none" id="forgot_success">Success! Please check your e-mail</p>-->
             <div class="modal-footer">
                 <button class="btn btn-CNify1" ng-click="forgotten(email)">OK</button>
                 <button class="btn btn-CNify2" ng-click="cancel()">Cancel</button>

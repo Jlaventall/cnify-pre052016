@@ -13,7 +13,7 @@ app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
     // Home
     .when("/", {templateUrl: "partials/home.html", controller: "PageCtrl"})
- 
+    .when("/travel", {templateUrl: "partials/travel.html", controller: "PageCtrl"})
     // Pages
 	.when("/CNify-process", {templateUrl: "partials/CNify-process.html", controller: "PageCtrl"})
     .when("/china", {templateUrl: "partials/china.html", controller: "PageCtrl"})
@@ -246,10 +246,14 @@ app.service('AuthorizationService', ['$http', '$route', '$location', '$window',
 
 app.controller('TabsDemoCtrl', function ($scope, $window, AuthorizationService) {
   console.log('TabsDemoCtrl');
+
+  var emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     
   $scope.regError = {};
   $scope.regSuccess = {};
   $scope.logError = {};
+  $scope.forgotError = {};
+  $scope.forgotSuccess = {};
     
   $scope.closeAlert = function (err) {
     err.message = null;
@@ -262,15 +266,41 @@ app.controller('TabsDemoCtrl', function ($scope, $window, AuthorizationService) 
   ];
 
   $scope.register = function (username, password1, password2, email) {
+      $scope.regError = {};
+    $scope.regSuccess = {};
+
+    if (!username) {
+      $scope.regError.userError = true;
+      $scope.regError.message = 'Field Username is required.';
+      return;
+    } else if (!password1) {
+      $scope.regError.passwordError = true;
+      $scope.regError.message = 'Field Password is required.';
+      return;
+    } else if (!password2) {
+      $scope.regError.passwordError = true;
+      $scope.regError.message = 'Please repeat your password.';
+      return;
+    } else if (!email) {
+      $scope.regError.emailError = true;
+      $scope.regError.message = 'Field Email is required.';
+      return;
+    } else if (!emailRegex.test(email)) {
+      $scope.regError.emailError = true;
+      $scope.regError.message = 'Please enter valid email.';
+      return;
+    } else if (password1 != password2) {
+      $scope.regError.passwordError = true;
+      $scope.regError.message = 'Passwords are not identical.';
+      return;
+    }
+
     AuthorizationService.register(username, password1, password2, email).success(function(response) {
       $scope.regError = {};  
       $scope.regSuccess.message = 'You have successfully registered. Please activate your account by received email.';
       //$scope.login(username, password1)
     }).error(function (data, status){
       if (status == 403) {
-        $scope.regError = {};
-        $scope.regSuccess = {};
-          
         switch (data) {
           case 'A user with that email already exists.' :
             $scope.regError.emailError = true;
@@ -293,12 +323,20 @@ app.controller('TabsDemoCtrl', function ($scope, $window, AuthorizationService) 
   };
 
   $scope.login = function (username, password) {
+    $scope.logError = {};
+
+    if (!username) {
+      $scope.logError.userError = true;
+      $scope.logError.message = 'Field Username is required.';
+      return;
+    } else if (!password) {
+      $scope.logError.passwordError = true;
+      $scope.logError.message = 'Field Password is required.';
+      return;
+    }
     AuthorizationService.login(username, password).success(function() {
-      $scope.logError = {};  
       $window.location.href = 'https://my.cnify.com/';
-    }).error(function (data, status) {  
-      $scope.regError = {};
-        
+    }).error(function (data, status) {
       if (status == 403) {
         $scope.logError.message = 'Invalid username or password.';
         $scope.logError.credError = true;
@@ -311,9 +349,27 @@ app.controller('TabsDemoCtrl', function ($scope, $window, AuthorizationService) 
   };
 
   $scope.forgotten = function (email) {
+    $scope.forgotError = {};
+    $scope.forgotSuccess = {};
+
+    if (!email) {
+      $scope.forgotError.emailError = true;
+      $scope.forgotError.message = 'Field Email is required.';
+      return;
+    } else if (!emailRegex.test(email)) {
+      $scope.forgotError.emailError = true;
+      $scope.forgotError.message = 'Please enter valid email.';
+      return;
+    }
     AuthorizationService.forgotten(email).success(function(response) {
-        $('#forgot_success').css('display', 'inline');
+       $scope.forgotSuccess.message = 'Success! Please check your e-mail';
     }).error(function (data){
+      if (status == 403) {
+        $scope.forgotError.emailError = true;
+        $scope.forgotError.message = data;
+      } else {
+        $scope.forgotError.message = data.replace(/<[^>]+>/gm, '') || 'Server error occurred';
+      }
         console.log(data);
       });
   };
