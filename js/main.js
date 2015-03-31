@@ -24,7 +24,7 @@ app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
     .otherwise({templateUrl: "partials/404.html", controller: "PageCtrl"});
 	
 	//remove # hash
-	$locationProvider.html5Mode(true).hashPrefix('!');
+	//$locationProvider.html5Mode(true);
 }]);
 
 app.service('anchorSmoothScroll', function() {
