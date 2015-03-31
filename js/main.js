@@ -22,6 +22,8 @@ app.config(['$routeProvider', function ($routeProvider) {
 
     // else 404
     .otherwise({templateUrl: "partials/404.html", controller: "PageCtrl"});
+	
+	$locationProvider.html5Mode(true);
 }]);
 
 app.service('anchorSmoothScroll', function() {
