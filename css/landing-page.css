@@ -168,10 +168,10 @@ h3 {
 	{
 		content: '';
 		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
+		left: 14em;
+		top: 14em;
+		width: 60%;
+		height: 40%;
 		background: rgba(60,50,70,0.65);
 	}
 	
