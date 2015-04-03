@@ -13,7 +13,6 @@ app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
   $routeProvider
     // Home
     .when("/", {templateUrl: "partials/home.html", controller: "PageCtrl"})
-    .when("/travel", {templateUrl: "partials/travel.html", controller: "PageCtrl"})
     // Pages
 	.when("/CNify-process", {templateUrl: "partials/CNify-process.html", controller: "PageCtrl"})
     .when("/china", {templateUrl: "partials/china.html", controller: "PageCtrl"})
