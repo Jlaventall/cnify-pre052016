@@ -11,11 +11,11 @@
             <span ng-class="{'has-error': regError.userError}">
                 <input type="text" ng-model="username" class="form-control">
             </span>
-			<p>Enter a Password here:</p>
+			<p>Enter a Password Here:</p>
             <span ng-class="{'has-error': regError.passwordError}">
                 <input type="password" ng-model="password1" class="form-control">
             </span>
-			<p>Re-enter your password:</p>
+			<p>Re-enter Your Password:</p>
             <span ng-class="{'has-error': regError.passwordError}">
                 <input type="password" ng-model="password2" class="form-control">
             </span>
@@ -30,11 +30,11 @@
 		</tab>
 		<tab heading="Login">
             <alert type="danger" class="auth-errors" close="closeAlert(logError)" ng-if="logError.message"><small>{{logError.message}}</small></alert>
-		    <p>Create a Username:</p>
+		    <p>Enter Your Username:</p>
             <span ng-class="{'has-error': logError.credError || logError.userError}">
                 <input type="text" class="form-control" required autofocus ng-model="username">
             </span>
-		    <p>Enter a Password here:</p>
+		    <p>Enter Your Password Here:</p>
             <span ng-class="{'has-error': logError.credError || logError.passwordError}">
                 <input type="password" class="form-control" required ng-model="password">
             </span>
