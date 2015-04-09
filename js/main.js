@@ -18,6 +18,7 @@ app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
     .when("/china", {templateUrl: "partials/china.html", controller: "PageCtrl"})
     .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
     .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
+	.when("/introduction-translation", {templateUrl: "partials/introduction-translation.html", controller: "PageCtrl"})
     .when("/sell-to-china", {templateUrl: "partials/sell-to-china.html", controller: "PageCtrl"})
 	.when("/go-local", {templateUrl: "partials/go-local.html", controller: "PageCtrl"})
 	.when("/market-presence", {templateUrl: "partials/market-presence.html", controller: "PageCtrl"})
