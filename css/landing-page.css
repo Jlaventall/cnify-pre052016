@@ -161,38 +161,23 @@ h3 {
 
 /* Header */
 
-	#header-wrapper
-	{
-		background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
+	#header-wrapper {
+		background: url(../img/intro-bg.jpg) no-repeat 50% -50% fixed;
 		background-size: cover;
-		position: relative;
-		top: 50px;
-		background-clip: border-box;
-		background-color: rgba(0, 0, 0, 0);
-		background-origin: padding-box;
-		background-repeat: no-repeat;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		-webkit-background-size: cover;
+		width: 100%;
+		height: 100%;
+		margin-top: 50px;
 	}
 	
-	#header-wrapper:before
-	{
-		content: '';
-		position: absolute;
-		left: 14em;
-		top: 14em;
-		width: 60%;
-		height: 40%;
-		background: rgba(60,50,70,0.65);
-	}
-	
-	#header {
+	header {
 		position: relative;
-		z-index: 1;
-	}
-	
-	header
-	{
-		margin-bottom: 3em;
-		position: relative;
+		top: 300px;
+		margin-bottom: 50%;
+		text-align: center;
+		background: rgba(0,0,0,0.6);
 	}
 	
 	header h1
@@ -212,7 +197,7 @@ h3 {
 		padding: 0;
 	}
 	
-		header h3
+	header h3
 	{
 		color: #fff;
 		display: block;
@@ -228,16 +213,61 @@ h3 {
 		font-weight: 200;
 		color: rgba(255,255,255,.8);
 	}
+	
+@media(max-width:768px) {
+	#header-wrapper {
+		background: url(../img/intro-bg.jpg) no-repeat 100% 50% fixed;
+		background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		-webkit-background-size: cover;
+		width: 100%;
+		height: 100%;
+	}
+	
+	header {
+		position: relative;
+		top: 150px;
+		margin-bottom: 100%;
+		text-align: center;
+		background: rgba(0,0,0,0.6);
+	}
+	
+	header h1
+	{
+		color: #fff;
+		text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+		font-size: 4em;
+		font-variant: small-caps;
+	}
+	
+	header h3
+	{
+		font-size: 1em;
+		color: #fff;
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+	
+	header .byline
+	{
+		display: block;
+		margin: 1.50em 0em;
+		line-height: 2em;
+		font-weight: 200;
+		color: rgba(255,255,255,.8);
+	}
+}
 
 /* Banner */
 
 	#banner
 	{
-		overflow: hidden;
-		padding: 14em 0em;
+		padding: 0;
 		text-align: center;
-		z-index: 1;
 		position: relative;
+		margin: 0;
 	}
 
 	#banner header h2
