@@ -100,43 +100,6 @@ app.controller('ScrollController', ['$scope', '$location', 'anchorSmoothScroll',
   }]);
 
 /**
- * Controls the carousel CHINA
- */
-app.controller('CarouselCtrl_china', function ($scope) {
-  $scope.myInterval = 5000;
-  var slides = $scope.slides = [];
-  $scope.addSlide = function() {
-    var newWidth = 800 + slides.length + 1;
-    $scope.myInterval = 7000;
-	  $scope.slides = [{
-		image: 'img/zh_fact1_400.png'
-	  }, {
-		image: 'img/zh_fact2_400.png'
-	  }, {
-		image: 'img/zh_fact3_400.png'
-	  }, {
-		image: 'img/zh_fact4_400.png'
-	  }, {
-		image: 'img/zh_fact5_400.png'
-	  }, {
-		image: 'img/zh_fact6_400.png'
-	  }, {
-		image: 'img/zh_fact7_400.png'
-	  }, {
-		image: 'img/zh_fact8_400.png'
-	  }, {
-		image: 'img/zh_fact9_400.png'
-	  }, {
-    image: 'img/zh_fact10_400.png'
-    }
-    ];
-  };
-  for (var i=0; i<4; i++) {
-    $scope.addSlide();
-  }
-});
-
-/**
  * Controls Modal - login
  */
 app.controller('LoginCtrl', function ($scope, $modalInstance) {
