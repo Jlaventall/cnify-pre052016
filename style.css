@@ -1,0 +1,162 @@
+/*   
+Theme Name: Cnify
+Author: Aminnazir
+Author URI: http://aminnazir.net
+Version: 1
+*/
+
+
+.bx-wrapper .bx-viewport {
+    
+    background:transparent !important;
+width:100% ! important;
+}
+
+.bx-wrapper {
+    position: relative;
+    width: 100% !important;
+max-width: 100% !important;
+    
+}
+
+#china ul li {
+  
+    margin: 0px -2px 0px -2px ! important;
+height:325px;
+   
+}
+
+#socialmedia h1
+{
+    font-size: 44px;
+}
+
+
+
+#socialmedia img.aligncenter
+{
+    margin-left: 350px;
+    margin-bottom: 50px;
+    margin-top: -50px;
+}
+
+#wwd ul
+{
+   margin: 50px;
+}
+
+#wwd ul li
+{
+   list-style-type: none;
+}
+
+#moption h2
+{
+    padding-top: 50px;
+}
+
+#getstarted h2
+{
+    padding-top: 50px;
+}
+
+#getstarted ul li p
+{
+    font-size: 13pt;
+    /* text-align: justify; */
+
+}
+
+.button {
+   border-top: 1px solid #ffffff;
+   background: #693121;
+   background: -webkit-gradient(linear, left top, left bottom, from(#b6000f), to(#693121));
+   background: -webkit-linear-gradient(top, #b6000f, #693121);
+   background: -moz-linear-gradient(top, #b6000f, #693121);
+   background: -ms-linear-gradient(top, #b6000f, #693121);
+   background: -o-linear-gradient(top, #b6000f, #693121);
+   padding: 6.5px 13px;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 24px;
+   text-decoration: none;
+   vertical-align: middle;
+   margin: 0px 50px 0px 0px;
+   }
+.button:hover {
+   border-top-color: #b6000f;
+   background: #b6000f;
+   color: #999999;
+   }
+.button:active {
+   border-top-color: #ed091c;
+   background: #ed091c;
+   }
+
+/* CF7 Messages */
+.wpcf7 .wpcf7-validation-errors{
+    border:none;
+    margin: 25px;
+    color: #C32323;
+    font-size: 24px;
+    background-color:#E4AFAF;
+    padding:20px;
+    
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.wpcf7 .wpcf7-mail-sent-ok{
+    border:none;
+    padding:20px;
+    color: #006B15;
+    font-size: 24px;
+    background: #DDFFE7;
+    margin: 25px;
+    
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.wpcf7 .wpcf7-mail-sent-ng{
+    border:none;
+    margin: 25px;
+    color: #C32323;
+    font-size: 24px;
+    background-color:#E4AFAF;
+    padding:20px;
+    
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.screen-reader-response {
+   color: #C32323;
+   font-size: 18px;
+   margin: 12px;
+}
+
+.wpcf7-form .fleft{
+  float: left;
+}
+
+.wpcf7-form .mright20{
+  margin-right: 20px;
+}
+
+.wpcf7-form .mright40{
+  margin-right: 40px;
+}
+
+.wpcf7-form .clear{
+  clear: both;
+}

@@ -40,6 +40,55 @@ h3 {
 	font-size: 2em;
 }
 
+icon.fa {
+	font-size: 3em;
+	margin: 20px;
+	color: #960C0C;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+table h2 {
+	color: #4f0606;
+ }
+ 
+table h2:hover {
+	color: #f36161;
+ }
+ 
+table p.dec_1{
+	color: #064f4f;
+ }
+ 
+table h4 {
+	color: #0a8686;
+}
+
+table h3 {
+	color: #0a8686;
+	font-size: 28px;
+}
+
+span.text-info {
+	margin-left: 15px;
+	font-size: 16px;
+	font-style: oblique;
+}
+
 .topnav {
     font-size: 24px; 
 }
@@ -405,12 +454,23 @@ h3 {
 }
 
 .thumbnail {
-	min-height: 500px;
+	min-height: 600px;
+}
+
+.mkt-1 {
+  min-height: 400px;
 }
 
 .form-control {
 	width: 75%;
 }
+
+.thumbnail.thmb-hghlt.thmb-featured {
+  padding: 20px;
+  -moz-box-shadow: 0 0 12px 3px #b0b2ab;
+  -webkit-box-shadow: 0 0 12px 3px #b0b2ab;
+  box-shadow: 0 0 12px 3px #b0b2ab;
+ }
 
 /*TIMELINE*/
 
@@ -620,22 +680,6 @@ h3 {
 	margin-top: 100px;
 }
 
-#china .carousel-indicators {
-	display: none;
-}
-
-#china .carousel-control {
-	background: none;
-}
-
-#china .carousel-control .icon-prev, .carousel-control .icon-next, .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
-	color: #000;
-}
-
-#china .col-md-6 {
-	min-height: 400px;
-}
-
 .nav-tabs>li>a {
 	color: #A90000;
 }
@@ -643,6 +687,10 @@ h3 {
 .portfolio-item img {
   border: 1px solid #e7e7e7;
   margin-top: 55px;
+}
+
+img.img-center.img-responsive {
+  margin: 0 auto;
 }
 
 /*MC SIGNUP STYLING*/
@@ -726,4 +774,14 @@ footer .login {
 	display: block;
 	position: absolute;
 	top: 30px;
+}
+
+icon.footericon {
+  font-size: 24px;
+  margin: 10px;
+  color: #337ab7;
+}
+
+icon.footericon:hover {
+	color: #22527b;
 }

@@ -18,11 +18,11 @@ app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
     .when("/china", {templateUrl: "partials/china.html", controller: "PageCtrl"})
     .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
     .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
-	.when("/introduction-translation", {templateUrl: "partials/introduction-translation.html", controller: "PageCtrl"})
+	.when("/china-market-entry", {templateUrl: "partials/china-market-entry.html", controller: "PageCtrl"})
+    .when("/travel-and-destination", {templateUrl: "partials/travel-and-destination.html", controller: "PageCtrl"})
     .when("/sell-to-china", {templateUrl: "partials/sell-to-china.html", controller: "PageCtrl"})
-	.when("/go-local", {templateUrl: "partials/go-local.html", controller: "PageCtrl"})
-	.when("/market-presence", {templateUrl: "partials/market-presence.html", controller: "PageCtrl"})
-	.when("/partnership", {templateUrl: "partials/partnership.html", controller: "PageCtrl"})
+    .when("/awesome-chinese-content", {templateUrl: "partials/awesome-chinese-content.html", controller: "PageCtrl"})
+    .when("/impactful-promotion-in-china", {templateUrl: "partials/impactful-promotion-in-china.html", controller: "PageCtrl"})
 	
     // else 404
     .otherwise({templateUrl: "partials/404.html", controller: "PageCtrl"});
@@ -98,6 +98,14 @@ app.controller('ScrollController', ['$scope', '$location', 'anchorSmoothScroll',
       anchorSmoothScroll.scrollTo("Content");
     };
   }]);
+  
+ /**
+ * Controls weixin popup in footer
+ */ 
+ 
+app.controller('CollapseCtrl', function ($scope) {
+  $scope.isCollapsed = true;
+});
 
 /**
  * Controls Modal - login
