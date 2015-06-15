@@ -3,8 +3,8 @@
     <div class="row">
 
         <div class="col-lg-12">
-            <h1 class="page-header">About
-                <small>It's Nice to Meet You!</small>
+            <h1 class="page-header">About CNify
+                <small>  a US-based China-focused content marketing agency</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#/">Home</a>
@@ -21,13 +21,35 @@
             <img class="img-responsive" src="img/about/Streets_CNify.jpg">
         </div>
         <div class="col-md-6">
-            <h2>Why CNify</h2>
-
-            <p>CNify establishes brands online in China. '.cn' is China's domain, and CNify enables your brand to become a part of this exciting and rapidly developing marketplace.</p>
-
-            <p>CNify was established to help overseas businesses establish and build a digital marketing presence in China. Specifically, we focus on helping businesses and organizations in <span class="bold">Travel</span>, <span class="bold">Retail</span> as well as online marketers with <span class="bold">mobile applications</span> and <span class="bold">web services</span> targeted to China.</p>
-        </div>
-
+            <h2>About CNify</h2>	
+		<div ng-controller="AccordionCtrl">
+			<accordion close-others="oneAtATime">
+				<accordion-group heading="Who is CNify?" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+				<p class="lead">CNify is a US-based China-focused content marketing agency. We help firms leverage content to build customer relationships in China.</p>
+				<p>Overseas brands face a significant number of challenges when it comes to marketing in China. CNify enables overseas brands to overcome these challenges and successfully use content to build customer relationships with customers from China.</p>
+				<p>CNify is an agency of professionals located on both sides of the Pacific with expertise in marketing, digital technologies, language translation and content localization as well as PR, media and even the finer points of wine tasting. Our network of professionals spans all aspects of establishing and building a brand in China. We can help brands of all sizes and industries make successful inroads through identifying the right target market and establishing and developing marketing campaigns to build customer relationships. </p>
+				</accordion-group>
+				<accordion-group heading="What can CNify do for me?">
+				<p class="lead">CNify makes your brand make sense in China.</p>
+				<p>Through thoughtful content, market targeting, impactful promotions and active customer engagement, CNify gives your brand the ability to build valuable customer relationships in China.</p>
+				</accordion-group>
+				<accordion-group heading="Can CNify help my brand?">
+				<p class="lead">Never before has it been this easy to establish and build a brand in China.</p>
+				<p>For brands that are committed to building relationships with customers from China, CNify can absolutely help your brand. This requires thoughtful attention and strategy on all facets of your brand's operations. CNify ensures that your brand's marketing and engagement in China is effective and delivering on marketing objectives.</p>
+				</accordion-group>
+				<accordion-group heading="We're not setup to sell in China. Can CNify help me with that?">
+				<p class="lead">Consider all aspects of your brand in China before proceeding.</p>
+				<p>There most likely holds a significant market opportunity for your brand in China. However, this opportunity does not come without challenges. CNify helps brands overcome many of the difficulties towards marketing, acquiring and retaining customers. There still are many other aspects to your operations in China that must be considered. CNify can offer suggestions of professionals with expertise in your firm's field.</p>
+				</accordion-group>	
+				</accordion-group>
+				<accordion-group heading="Why CNify?">
+				<p class="lead">CNify localizes your brand for success.</p>
+				<p>We're a group of seasoned marketing professionals with diverse backgrounds and deep relationships with our focus-market; China. Our passion is helping overseas brands uncover success in China. We know we can do that for brands that are committed to pursuing market opportunities in China. And we can do it effectively within the confines of all types of budgets and requirements.</p>
+				<p>We look forward to being at your service.</p>
+				</accordion-group>					
+			</accordion>
+		 </div>
+        </div>	 
     </div>
 
     <!-- Team Member Profiles -->
@@ -48,10 +70,10 @@
         </div>
 
         <div class="col-sm-4">
-            <img class="img-responsive" src="img/about/renchangyuan.jpg">
+            <img class="img-responsive" src="img/about/marthawang.jpg">
 
-            <h3>Ren Changyuan<br>
-                <small>China Development Manager</small>
+            <h3>Martha Wang<br>
+                <small>Principal</small>
             </h3>
             <p></p>
         </div>
@@ -65,47 +87,20 @@
             <p></p>
         </div>
 
+        <div class="col-sm-4">
+            <img class="img-responsive" src="img/about/renchangyuan.jpg">
+
+            <h3>Ren Changyuan<br>
+                <small>China Development Manager</small>
+            </h3>
+            <p></p>
+        </div>
+		
     </div>
 
     <!-- Our Customers -->
 
-    <div class="row last-row">
-
-        <div class="col-lg-12">
-            <h2 class="page-header">Who We Serve</h2>
-        </div>
-
-        <div class="col-md-2 col-sm-4 col-xs-6">
-            <img class="img-responsive img-customer" src="img/about/panel_1.png">
-			<h4>Destination Marketing Organizations</h4>
-        </div>
-
-        <div class="col-md-2 col-sm-4 col-xs-6">
-            <img class="img-responsive img-customer" src="img/about/panel_2.png">
-			<h4>Hospitality Marketers</h4>
-        </div>
-
-        <div class="col-md-2 col-sm-4 col-xs-6">
-            <img class="img-responsive img-customer" src="img/about/panel_3.png">
-			<h4>Online Retailers</h4>
-        </div>
-
-        <div class="col-md-2 col-sm-4 col-xs-6">
-            <img class="img-responsive img-customer" src="img/about/panel_4.png">
-			<h4>Consumer Product Manufacturers</h4>
-        </div>
-
-        <div class="col-md-2 col-sm-4 col-xs-6">
-            <img class="img-responsive img-customer" src="img/about/panel_5.png">
-			<h4>Online Digital Products</h4>
-        </div>
-		
-		<div class="col-md-2 col-sm-4 col-xs-6">
-            <img class="img-responsive img-customer" src="img/about/panel_6.png">
-			<h4>Food and Value-Added Agriculture</h4>
-        </div>
-
-    </div>
+   
 
 </div>
 <!-- /.container -->

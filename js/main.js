@@ -15,15 +15,12 @@ app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
     .when("/", {templateUrl: "partials/home.html", controller: "PageCtrl"})
     // Pages
 	.when("/CNify-process", {templateUrl: "partials/CNify-process.html", controller: "PageCtrl"})
-    .when("/china", {templateUrl: "partials/china.html", controller: "PageCtrl"})
     .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
     .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
-	.when("/china-market-entry", {templateUrl: "partials/china-market-entry.html", controller: "PageCtrl"})
-    .when("/travel-and-destination", {templateUrl: "partials/travel-and-destination.html", controller: "PageCtrl"})
-    .when("/sell-to-china", {templateUrl: "partials/sell-to-china.html", controller: "PageCtrl"})
-    .when("/awesome-chinese-content", {templateUrl: "partials/awesome-chinese-content.html", controller: "PageCtrl"})
+	.when("/content-creation-localization", {templateUrl: "partials/content-creation-localization.html", controller: "PageCtrl"})
+    .when("/market-establishment-in-china", {templateUrl: "partials/market-establishment-in-china.html", controller: "PageCtrl"})	
     .when("/impactful-promotion-in-china", {templateUrl: "partials/impactful-promotion-in-china.html", controller: "PageCtrl"})
-	
+    .when("/customer-engagement-in-china", {templateUrl: "partials/customer-engagement-in-china.html", controller: "PageCtrl"})	
     // else 404
     .otherwise({templateUrl: "partials/404.html", controller: "PageCtrl"});
 	
@@ -102,9 +99,35 @@ app.controller('ScrollController', ['$scope', '$location', 'anchorSmoothScroll',
  /**
  * Controls weixin popup in footer
  */ 
- 
 app.controller('CollapseCtrl', function ($scope) {
   $scope.isCollapsed = true;
+});
+
+ /**
+ * Controls pop-over
+ */ 
+app.controller('PopoverCtrl', function ($scope) {
+  $scope.dynamicPopover = {
+    content: 'Hello, World!',
+    templateUrl: 'myPopoverTemplate.html',
+    title: 'Title'
+  };
+});
+
+ /**
+ * Controls accordion
+ */ 
+app.controller('AccordionCtrl', function ($scope) {
+  $scope.oneAtATime = true;
+
+  $scope.groups = [
+
+  ];
+
+  $scope.status = {
+    isFirstOpen: true,
+    isFirstDisabled: false
+  };
 });
 
 /**

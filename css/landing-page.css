@@ -24,6 +24,11 @@ html {
 	position:relative;
 }
 
+.row {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 
 body,
 h1,
@@ -40,10 +45,25 @@ h3 {
 	font-size: 2em;
 }
 
+h3.leader {
+  font-size: 1.25em;
+  margin-top: -35px;
+  margin-left: 10px;
+  color: white;
+  font-weight: bolder;
+}
+
 icon.fa {
 	font-size: 3em;
 	margin: 20px;
 	color: #960C0C;
+}
+
+icon.fa_large {
+	font-size: 5em;
+	margin: 20px;
+	color: #960C0C;
+
 }
 
 a:link {
@@ -54,12 +74,14 @@ a:visited {
     text-decoration: none;
 }
 
-a:hover {
+a:active {
     text-decoration: none;
 }
 
-a:active {
+tr:hover {
     text-decoration: none;
+	background: #f8f8f8;
+	color: #0a8686;
 }
 
 table h2 {
@@ -69,6 +91,13 @@ table h2 {
 table h2:hover {
 	color: #f36161;
  }
+ 
+img.media-object {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+
+}
  
 table p.dec_1{
 	color: #064f4f;
@@ -80,7 +109,12 @@ table h4 {
 
 table h3 {
 	color: #0a8686;
-	font-size: 28px;
+	font-size: 24px;
+}
+
+h3.media-heading  {
+  color: #0a8686;
+  font-size: 24px;
 }
 
 span.text-info {
@@ -98,15 +132,6 @@ span.text-info {
     font-weight: 100;
 }
 
-.btn-lg a {
-	color: rgb(147, 35, 35);
-	text-decoration: none;
-}
-
-.img-customer {
-	height: 50px;
-}
-
 .btn-CNify1 {
   color: #FFFFFF;
   background-color: #960C0C;
@@ -118,10 +143,13 @@ span.text-info {
   text-decoration: none;
 }
 
+button.btn.btn-CNify1.btn-block:hover {
+  color: #ffffff;
+  background-color: #c51010;
+}
+
 .btn-CNify2 {
-	color: #FFFFFF;
-	background-color: #C7C7C7;
-	border-color: #A8A8A8;
+	font-size: 32px;
 }
 
 .auth-errors {
@@ -205,8 +233,6 @@ span.text-info {
 	border-bottom: 1px solid grey;
 }
 }
-
-
 
 /* Header */
 
@@ -424,12 +450,10 @@ span.text-info {
 }
 
 .content-section-a {
-    padding: 50px 0;
     background-color: #f8f8f8;
 }
 
 .content-section-b {
-    padding: 50px 0;
     border-top: 1px solid #e7e7e7;
     border-bottom: 1px solid #e7e7e7;
 }
@@ -438,23 +462,19 @@ span.text-info {
   padding-top: 70px;
 }
 
-.establish-in-china {
-  padding-top: 70px;
-}
-
 .section-heading {
     margin-bottom: 30px;
 	font-size: 2em;
+}
+
+h1.section-heading {
+	font-size: 3em;
 }
 
 .section-heading-spacer {
     float: left;
     width: 200px;
     border-top: 3px solid #e7e7e7;
-}
-
-.thumbnail {
-	min-height: 600px;
 }
 
 .mkt-1 {
@@ -471,6 +491,13 @@ span.text-info {
   -webkit-box-shadow: 0 0 12px 3px #b0b2ab;
   box-shadow: 0 0 12px 3px #b0b2ab;
  }
+
+.bk{
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; /* future proofing */
+	-khtml-border-radius: 5px; /* for old Konqueror browsers */
+}
 
 /*TIMELINE*/
 
@@ -675,6 +702,10 @@ span.text-info {
 }
 
 /*other pages*/
+
+.create_bk{
+
+}
 
 .page-header {
 	margin-top: 100px;
