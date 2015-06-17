@@ -104,17 +104,6 @@ app.controller('CollapseCtrl', function ($scope) {
 });
 
  /**
- * Controls pop-over
- */ 
-app.controller('PopoverCtrl', function ($scope) {
-  $scope.dynamicPopover = {
-    content: 'Hello, World!',
-    templateUrl: 'myPopoverTemplate.html',
-    title: 'Title'
-  };
-});
-
- /**
  * Controls accordion
  */ 
 app.controller('AccordionCtrl', function ($scope) {

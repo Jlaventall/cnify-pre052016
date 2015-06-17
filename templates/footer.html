@@ -6,7 +6,7 @@
 			<h2 class="section-heading">Ready to start?</h2>
 				<p>Click the 'Register/Login' button below to get started. Follow the instructions for setting up an account and starting a project.</p>
 			<div ng-controller="ModalRegisterCtrl">
-				<button type="button" class="btn btn-CNify1 btn-lg" ng-click="open()">Login/Register</button>
+				<button type="button" class="btn btn-CNify1 btn-lg" ng-click="open()">Register/Login</button>
 			</div>
 			<br>
 		</div>
@@ -14,7 +14,7 @@
 			<hr class="section-heading-spacer">
 			<div class="clearfix"></div>
 			<h2 class="section-heading">Not sure where to start?</h2>
-			<p class="text-muted">Sign-up to receive relevant direct-to-China marketing ideas delivered straight to your inbox</p>
+			<p class="text-muted">Sign-up to receive relevant direct-to-China content marketing ideas delivered straight to your inbox</p>
 			<div ng-controller="ModalSignupCtrl">
 				<button type="button" class="btn btn-CNify1 btn-lg" ng-click="open()">Sign-Up</button>
 			</div>
@@ -23,37 +23,37 @@
 </div>
 <footer>
         <div class="container">
-            <div class="row">
+			<div class="row">
                 <div class="col-md-6">
                     <ul class="list-inline">
                         <li>
-                            <a ng-href="#/">Home</a>
+                            <a ng-href="#/" href="#/">Home</a>
                         </li>
-                        <li class="footer-menu-divider">&sdot;</li>
+                        <li class="footer-menu-divider">⋅</li>
 						<li>
-                            <a ng-href="#/CNify-process">Working with CNify</a>
+                            <a ng-href="#/CNify-process" href="#/CNify-process">Working with CNify</a>
                         </li>
-                        <li class="footer-menu-divider">&sdot;</li>
+                        <li class="footer-menu-divider">⋅</li>
                         <li>
-                            <a ng-href="#/about">About</a>
+                            <a ng-href="#/about" href="#/about">About</a>
                         </li>
-                        <li class="footer-menu-divider">&sdot;</li>
+                        <li class="footer-menu-divider">⋅</li>
                         <li>
-                            <a ng-href="#/contact">Contact</a>
+                            <a ng-href="#/contact" href="#/contact">Contact</a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted small">Copyright &copy; CNify 2015. All Rights Reserved</p>
+                    <p class="copyright text-muted small">Copyright © CNify 2015. All Rights Reserved</p>
                 </div>
 				<div class="col-md-6">
 					<ul class="list-inline">
-						<li><a href="https://twitter.com/brand_cnify""><icon class="fa fa-twitter footericon" aria-hidden="true"></icon></a></li>
-						<li><a href="https://www.facebook.com/cnify""><icon class="fa fa-facebook footericon" aria-hidden="true"></icon></a></li>
-						<li><a href="https://www.linkedin.com/in/jesslaventall""><icon class="fa fa-linkedin footericon" aria-hidden="true"></icon></a></li>
-						<li><a href="http://weibo.com/cnify/""><icon class="fa fa-weibo footericon" aria-hidden="true"></icon></a></li>
-						<li><div ng-controller="CollapseCtrl">
+						<li><a href="https://twitter.com/brand_cnify" "=""><icon class="fa fa-twitter footericon" aria-hidden="true"></icon></a></li>
+						<li><a href="https://www.facebook.com/cnify" "=""><icon class="fa fa-facebook footericon" aria-hidden="true"></icon></a></li>
+						<li><a href="https://www.linkedin.com/in/jesslaventall" "=""><icon class="fa fa-linkedin footericon" aria-hidden="true"></icon></a></li>
+						<li><a href="http://weibo.com/cnify/" "=""><icon class="fa fa-weibo footericon" aria-hidden="true"></icon></a></li>
+						<li><div ng-controller="CollapseCtrl" class="ng-scope">
 							<icon class="fa fa-weixin footericon" ng-click="isCollapsed = !isCollapsed"></icon>
 							<hr>
-							<div collapse="isCollapsed">
+							<div collapse="isCollapsed" class="collapse" style="height: 0px;">
 								<div class="well well-sm">
 									<img class="img-responsive" src="img/mmqrcode1410911277215.png" alt="CNify WeChat QR Code">
 								</div> 
