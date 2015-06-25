@@ -17,6 +17,7 @@ app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
 	.when("/CNify-process", {templateUrl: "partials/CNify-process.html", controller: "PageCtrl"})
     .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
     .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
+	.when("/services", {templateUrl: "partials/services.html", controller: "PageCtrl"})
 	.when("/content-creation-localization", {templateUrl: "partials/content-creation-localization.html", controller: "PageCtrl"})
     .when("/market-establishment-in-china", {templateUrl: "partials/market-establishment-in-china.html", controller: "PageCtrl"})	
     .when("/impactful-promotion-in-china", {templateUrl: "partials/impactful-promotion-in-china.html", controller: "PageCtrl"})
@@ -27,6 +28,21 @@ app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
 	//remove # hash
 	//$locationProvider.html5Mode(true);
 }]);
+
+/**
+ * Links to top of page
+ */
+app.controller('ScrollController', ['$scope', '$location', '$anchorScroll',
+  function ($scope, $location, $anchorScroll) {
+    $scope.gotoTop = function() {
+      // set the location.hash to the id of
+      // the element you wish to scroll to.
+      $location.hash('top');
+
+      // call $anchorScroll()
+      $anchorScroll();
+    };
+  }]);
 
 app.service('anchorSmoothScroll', function() {
     this.scrollTo = function(eID) {
@@ -89,10 +105,12 @@ app.controller('ScrollController', ['$scope', '$location', 'anchorSmoothScroll',
       // set the location.hash to the id of
       // the element you wish to scroll to.
       $location.hash('Content');
-
+      $location.hash('Top');
+	  
       // call $anchorScroll()
       //$anchorScroll();
       anchorSmoothScroll.scrollTo("Content");
+       anchorSmoothScroll.scrollTo("Top");	  
     };
   }]);
   
