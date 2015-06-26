@@ -128,6 +128,10 @@ span.text-info {
     font-weight: 100;
 }
 
+.faq {
+	color: #0a8686;
+}
+
 .btn-CNify1 {
   color: #FFFFFF;
   background-color: #960C0C;
@@ -678,7 +682,11 @@ h1.section-heading {
     }	
 	
 	.col-md-6.col_right {
-	  border-left: none;
+		border: none;
+	}
+	
+	.col-md-6.col_left {
+		border: none;
 	}
 
 	.btn-center {
@@ -734,7 +742,10 @@ h1.section-heading {
 
 	.col-md-6.col_right {
 		padding-left: 40px;
-		border-left: 1px solid rgb(41, 149, 149);
+	}
+
+	.col-md-6.col_left {
+		border-right: 1px solid rgb(41, 149, 149);
 	}
 
 	.btn-center {
@@ -791,7 +802,10 @@ h1.section-heading {
 	
 	.col-md-6.col_right {
 		padding-left: 40px;
-		border-left: 1px solid rgb(41, 149, 149);
+	}
+
+	.col-md-6.col_left {
+		border-right: 1px solid rgb(41, 149, 149);
 	}
 	
 	.btn-center {
@@ -804,10 +818,6 @@ h1.section-heading {
 }
 
 /*other pages*/
-
-.create_bk{
-
-}
 
 .page-header {
 	margin-top: 100px;
@@ -830,6 +840,11 @@ img.img-circle.img-responsive.center {
   border-left: solid 1px lightgrey;
   border-right: solid 1px lightgrey;
 }
+
+.jumbotron.jumbo_main {
+	padding: 15px;
+}
+
 
 /*MC SIGNUP STYLING*/
 #mc_embed_signup .mc-field-group input {
